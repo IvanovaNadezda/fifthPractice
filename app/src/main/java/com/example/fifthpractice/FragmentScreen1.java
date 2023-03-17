@@ -39,23 +39,27 @@ public class FragmentScreen1 extends Fragment {
         if (bundle != null) {
             if (bundle.containsKey("rating2"))
             {
+                // Устанавливаем данные из второго фрагмента
                 ratingOwl = bundle.getFloat("rating2");
                 binding.textView14.setText("Вы выбрали сову с рейтингом "+ ratingOwl);
             }
             else
             {
+                // Устанавливаем данные из третьего фрагмента
                 ratingFodder = bundle.getFloat("rating3");
                 binding.textView6.setText("Вы выбрали корм с рейтингом "+ ratingFodder);
             }
 
         }
 
+        // Переход на второй фрагмент из первого
         binding.button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_first_fragment_to_second_fragment);
             }
         });
+        // Переход на третий фрагмент из первого
         binding.button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

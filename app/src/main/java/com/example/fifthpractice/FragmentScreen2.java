@@ -29,9 +29,12 @@ public class FragmentScreen2 extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // Выбираем рейтинг
         binding.ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            // Передаем данные обратно
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                // Передача данных из второй активности в первую
                 Bundle bundle = new Bundle();
                 bundle.putFloat("rating2",  binding.ratingBar.getRating());
                 Navigation.findNavController(view).navigate(R.id.action_second_fragment_to_first_fragment,bundle);
